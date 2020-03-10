@@ -17,14 +17,28 @@ def averageAge(df):
 
     fig, axes =  plt.subplots()
     axes.bar(height,repetitions)
-    fig.suptitle('Average age of fighters')
+    fig.suptitle('Age of Fighters')
     return
 
 
+def mostOldMostWins(df):
+    df = df.sort_values(by=['B_age', 'R_age'],ascending=False)
+    winner = []
+    for _,values in df.iterrows():
+        if(values['Winner'] == 'Red'):
+            winner.append(values['R_fighter'])
+        elif ( values['Winner'] == 'Blue'):
+            winner.append(values['B_fighter'])
+    c = collections.Counter(winner).most_common(10)
+    print(c)
+    
+
 
 def init(df):
-    averageAge(df)
-    plt.show()
+    df = df.dropna(axis='rows')
+    #averageAge(df)
+    mostOldMostWins(df)
+    #plt.show()
 
 
 
