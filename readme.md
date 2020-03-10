@@ -5,7 +5,7 @@ This project is a proof of concept my approach with data science.
 
 # Analysis
 
-For every fighter between the proposed years we have a median of the years.
+Plot of the age of the fighters.
 
 ![Age media](https://github.com/antoniott15/ufcDataAnalisys/blob/master/plots/ageOfFigthers.png)
 
@@ -13,6 +13,9 @@ The most oldest fighter and with most wins are 'Damian Maia' with 30 years old a
 
 ![YoungestOldest](https://github.com/antoniott15/ufcDataAnalisys/blob/master/plots/mostOld.png)
 
+The top ten fighters with more loses than wins
+
+![MoreLoses](https://github.com/antoniott15/ufcDataAnalisys/blob/master/plots/losest.png)
 
 # Data 
 
