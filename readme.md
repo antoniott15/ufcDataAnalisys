@@ -7,7 +7,7 @@ This project is a proof of concept my approach with data science.
 
 For every fighter between the proposed years we have a median of the years.
 
-![Age media]("./avrAge.png")
+![Age media]("https://github.com/antoniott15/ufcDataAnalisys/blob/master/plots/avrAge.png")
 
 
 # Data 
