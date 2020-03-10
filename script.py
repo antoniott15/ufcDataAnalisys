@@ -51,7 +51,7 @@ def mostOldMostWins(df):
         value.append(fighter[elements]['wins'])
     fig, ax = plt.subplots()
     ax.scatter(value,fighterTitle)
-    plt.savefig(PATH + 'mostOld.png')
+    plt.savefig(PATH + 'mostOld.png',bbox_inches='tight')
     return
 
 
