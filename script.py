@@ -6,7 +6,9 @@ import matplotlib.pyplot as plt
 
 PATH = './plots/'
 
-
+#
+# Gets x: age y:quantity, all ages of the fighters
+#
 def averageAge(df):
     c = collections.Counter(df['R_age'])
     height = []
@@ -22,14 +24,19 @@ def averageAge(df):
     return
 
 
+#
+# Get age through name
+#
 def getYearByName(df,name):
     for _, values in df.iterrows():
         if values['R_fighter'] == name:
             return values['R_age']
         if values['B_fighter'] == name:
             return values['B_age']
-            
 
+#
+#  Scale between the 10 most winners by age
+#           
 def mostOldMostWins(df):
     winner = []
     ageOfFighter = {}
@@ -54,15 +61,17 @@ def mostOldMostWins(df):
     return
 
 
-            
+#
+# The fighter that has more loses than wins by far
+#    
+def worstFighter(df):
     
-
 
 def init(df):
     df = df.dropna(axis='rows')
     averageAge(df)
     mostOldMostWins(df)
-  
+    worstFighter(df)
 
 
 
