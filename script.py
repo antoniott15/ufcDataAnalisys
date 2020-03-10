@@ -40,10 +40,9 @@ def mostOldMostWins(df):
         elif ( values['Winner'] == 'Blue'):
             winner.append(values['B_fighter'])
     c = dict(collections.Counter(winner).most_common(10))
-    x = {k: v for k, v in sorted(ageOfFighter.items(), key=lambda item: item[1], reverse=True)}
     fighter = {}
     for elements in c:
-        fighter[elements] = {'age': x[elements],'wins':c[elements]}
+        fighter[elements] = {'age': ageOfFighter[elements],'wins':c[elements]}
     fighterTitle = []
     value = []
     for elements in fighter:
