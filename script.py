@@ -5,10 +5,8 @@ import numpy as np
 
 PATH = './plots/'
 
-#
-# Gets x: age y:quantity, all ages of the fighters
-#
 def averageAge(df):
+    ''' Gets x: age y:quantity, all ages of the fighters '''
     c = collections.Counter(df['R_age'])
     height = []
     repetitions = []
@@ -23,20 +21,18 @@ def averageAge(df):
     return
 
 
-#
-# Get age through name
-#
+
 def getYearByName(df,name):
+    ''' Get age through nameGet age through name '''
     for _, values in df.iterrows():
         if values['R_fighter'] == name:
             return values['R_age']
         if values['B_fighter'] == name:
             return values['B_age']
 
-#
-#  Scale between the 10 most winners by age
-#           
+          
 def mostOldMostWins(df):
+    ''' Scale between the 10 most winners by age '''
     winner = []
     ageOfFighter = {}
     for _,values in df.iterrows():
@@ -59,11 +55,9 @@ def mostOldMostWins(df):
     plt.savefig(PATH + 'mostOld.png',bbox_inches='tight')
     return
 
-
-#
-# The fighter that has more loses than wins by far
-#    
+ 
 def worstFighter(df):
+    ''' The fighter that has more loses than wins by far '''
     loser = []
     winer = []
     df = df.dropna(how='all')
@@ -105,18 +99,21 @@ def worstFighter(df):
     plt.savefig(PATH + 'losest.png',bbox_inches='tight')
 
 
+
 def autolabel(rects,ax):
+    ''' Auto label in matplotlib '''
     for rect in rects:
         height = rect.get_height()
         ax.annotate('{}'.format(height),
                     xy=(rect.get_x() + rect.get_width() / 2, height),
-                    xytext=(0, 3),  # 3 points vertical offset
+                    xytext=(0, 3), 
                     textcoords="offset points",
                     ha='center', va='bottom')
 
 
 
 def init(df):
+    ''' Observer '''
     df = df.dropna(axis='rows')
     averageAge(df)
     mostOldMostWins(df)
