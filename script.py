@@ -124,24 +124,26 @@ def bestWomanWinStreak(df):
                 womanWin[values['B_fighter']] = values['B_current_win_streak']
     c = {k: v for k, v in sorted(womanWin.items(), key=lambda item: item[1], reverse = True)[0:1]}
     return c
-    
+
+ 
 
 def init(df):
     ''' Observer '''
-    df = df.dropna(axis='rows')
     #O(N)
     averageAge(df)
     #O(N)
     mostOldMostWins(df)
     #O(NLOGN)
     worstFighter(df)
-    bestWomanWinStreak(df)
+    #O(NLOGN)
+    woman = bestWomanWinStreak(df)
 
 
 
 
 def main():
     df = pd.read_csv('./ufcdata/data.csv')
+    df = df.dropna(axis='rows')
     init(df)
 
 
