@@ -4,9 +4,9 @@ import numpy as np
 import collections
 import matplotlib.pyplot as plt
 
-# Counter of Red corder
-#      ages
-#
+PATH = './plots/'
+
+
 def averageAge(df):
     c = collections.Counter(df['R_age'])
     height = []
@@ -18,6 +18,7 @@ def averageAge(df):
     fig, axes =  plt.subplots()
     axes.bar(height,repetitions)
     fig.suptitle('Age of Fighters')
+    plt.savefig(PATH + 'ageOfFigthers.png')
     return
 
 
@@ -50,6 +51,7 @@ def mostOldMostWins(df):
         value.append(fighter[elements]['wins'])
     fig, ax = plt.subplots()
     ax.scatter(value,fighterTitle)
+    plt.savefig(PATH + 'mostOld.png')
     return
 
 
@@ -61,7 +63,7 @@ def init(df):
     df = df.dropna(axis='rows')
     averageAge(df)
     mostOldMostWins(df)
-    plt.show()
+  
 
 
 
