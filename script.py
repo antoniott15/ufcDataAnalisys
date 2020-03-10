@@ -21,24 +21,47 @@ def averageAge(df):
     return
 
 
+def getYearByName(df,name):
+    for _, values in df.iterrows():
+        if values['R_fighter'] == name:
+            return values['R_age']
+        if values['B_fighter'] == name:
+            return values['B_age']
+            
+
 def mostOldMostWins(df):
-    df = df.sort_values(by=['B_age', 'R_age'],ascending=False)
     winner = []
+    ageOfFighter = {}
     for _,values in df.iterrows():
+        ageOfFighter[values['R_fighter']] = values['R_age']
         if(values['Winner'] == 'Red'):
             winner.append(values['R_fighter'])
         elif ( values['Winner'] == 'Blue'):
             winner.append(values['B_fighter'])
-    c = collections.Counter(winner).most_common(10)
-    print(c)
+    c = dict(collections.Counter(winner).most_common(10))
+    x = {k: v for k, v in sorted(ageOfFighter.items(), key=lambda item: item[1], reverse=True)}
+    fighter = {}
+    for elements in c:
+        fighter[elements] = {'age': x[elements],'wins':c[elements]}
+    fighterTitle = []
+    value = []
+    for elements in fighter:
+        fighterTitle.append(elements[0:12] + " "+ str(fighter[elements]['age']))
+        value.append(fighter[elements]['wins'])
+    fig, ax = plt.subplots()
+    ax.scatter(value,fighterTitle)
+    return
+
+
+            
     
 
 
 def init(df):
     df = df.dropna(axis='rows')
-    #averageAge(df)
+    averageAge(df)
     mostOldMostWins(df)
-    #plt.show()
+    plt.show()
 
 
 
