@@ -13,7 +13,7 @@ The most oldest fighter and with most wins are 'Damian Maia' with 30 years old a
 
 ![YoungestOldest](https://github.com/antoniott15/ufcDataAnalisys/blob/master/plots/mostOld.png)
 
-The top ten fighters with more loses than wins
+The top ten fighters with more loses than wins (There are sorted for wins - loses value)
 
 ![MoreLoses](https://github.com/antoniott15/ufcDataAnalisys/blob/master/plots/losest.png)
 
