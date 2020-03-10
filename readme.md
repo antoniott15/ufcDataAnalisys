@@ -25,5 +25,14 @@ The women with the best win Streak was:
 
 I get the data here https://www.kaggle.com/rajeevw/ufcdata/data
 
+
+# Next steps
+
+Scrap UFC web page to get dinamic data for analysis
+
+# More querys
+
+Please let your query in the issue sectiont, I will be happy to resorve it
+
 # Authors
     - Antonio Toche
