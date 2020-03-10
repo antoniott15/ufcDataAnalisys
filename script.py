@@ -112,12 +112,31 @@ def autolabel(rects,ax):
 
 
 
+
+def bestWomanWinStreak(df):
+    ''' Woman with the best win streak '''
+    womanWin = {}
+    for _,values in df.iterrows():
+        if "Women" in values['weight_class']:
+            if(values['Winner'] == 'Red'):
+                womanWin[values['R_fighter']] = values['R_current_win_streak']
+            elif (values['Winner'] == 'Blue'):
+                womanWin[values['B_fighter']] = values['B_current_win_streak']
+    c = {k: v for k, v in sorted(womanWin.items(), key=lambda item: item[1], reverse = True)[0:1]}
+    return c
+    
+
 def init(df):
     ''' Observer '''
     df = df.dropna(axis='rows')
+    #O(N)
     averageAge(df)
+    #O(N)
     mostOldMostWins(df)
+    #O(NLOGN)
     worstFighter(df)
+    bestWomanWinStreak(df)
+
 
 
 

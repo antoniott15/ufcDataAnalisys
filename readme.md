@@ -17,6 +17,10 @@ The top ten fighters with more loses than wins (There are sorted for wins - lose
 
 ![MoreLoses](https://github.com/antoniott15/ufcDataAnalisys/blob/master/plots/losest.png)
 
+The women with the best win Streak was:
+ - Cris Cyborg with 3 wins in a row
+
+
 # Data 
 
 I get the data here https://www.kaggle.com/rajeevw/ufcdata/data
